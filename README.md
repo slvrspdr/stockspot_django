@@ -11,7 +11,7 @@ Stockspot Pandora Challenge(django)
 
 ### Setup
 
-- Install dependencies and activate virtualenv:
+- Install dependencies and activate virtualenv(must setup your own mysql)
 
   ```
   pipenv shell # activate python virtualenv
@@ -19,7 +19,7 @@ Stockspot Pandora Challenge(django)
   manage.py runserver 7000
   ```
 
-- Build & launch development server
+- Build & launch development server(mysql is included in the docker-compose)
 
   ```
   docker-compose build # will import data file from the resources directory
