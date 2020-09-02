@@ -1,0 +1,32 @@
+version: "3"
+
+services:
+  app:
+    build: .
+    image: stockspot_django_api:1.0
+    depends_on:
+      - db
+    networks:
+      - main
+    ports:
+      - "7000:7000"
+
+  db:
+    image: mysql:5.7
+    restart: unless-stopped
+    networks:
+      - main
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=DF3kjfd!@
+      - MYSQL_DATABASE=pandora
+      - MYSQL_USER=root
+    volumes:
+      - db_data:/var/lib/mysql
+
+networks:
+  main:
+
+volumes:
+  db_data:
